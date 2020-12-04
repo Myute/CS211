@@ -1,0 +1,20 @@
+#ifndef PATIENT_H
+#define PATIENT_H
+
+#include <string>
+#include <sstream>
+
+using namespace std;
+
+class Patient
+{
+ private:
+  long patientID;
+  string name;
+  char gender;
+  string birthDate;
+ public:
+  Patient(long, string, char, string);
+  string toString();
+};
+#endif

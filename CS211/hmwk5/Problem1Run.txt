@@ -1,0 +1,49 @@
+Script started on Mon 07 May 2018 08:22:07 PM PDT
+]0;higbe005@empress:~/CS211/hmwk5[?1034h[higbe005@empress hmwk5]$ g++ Stack.cpp[K[K[Kh
+]0;higbe005@empress:~/CS211/hmwk5[higbe005@empress hmwk5]$ g++ Stack.cpp Driver.cpp
+]0;higbe005@empress:~/CS211/hmwk5[higbe005@empress hmwk5]$ ./a.out
+Enter a String: 
+While(a==b){a++;
+Missing Right Delimiter
+This string is not properly balanced
+Enter a String: 
+[A*(B+2)-{(3/C+(E-F))+[(E*3)-4]}]
+This string is properly balanced
+Enter a String: 
+if(a<(b*c)))
+Extra Right Delimiter
+This string is not properly balanced
+Enter a String: 
+{3+4+5+6-7]
+Delimiter Mismatch
+Missing Right Delimiter
+This string is not properly balanced
+Enter a String: 
+[A*(E+2)-((G*3+(E-B))+[(E*3)-4]}]
+Delimiter Mismatch
+Delimiter Mismatch
+Missing Right Delimiter
+This string is not properly balanced
+Enter a String: 
+A+B+C
+This string is properly balanced
+Enter a String: 
+(a+b+c*(d-2]))
+Delimiter Mismatch
+This string is properly balanced
+Enter a String: 
+[e-f)
+Delimiter Mismatch
+Missing Right Delimiter
+This string is not properly balanced
+Enter a String: 
+[[()()])
+Delimiter Mismatch
+Missing Right Delimiter
+This string is not properly balanced
+Enter a String: 
+q
+]0;higbe005@empress:~/CS211/hmwk5[higbe005@empress hmwk5]$ exit
+exit
+
+Script done on Mon 07 May 2018 08:23:35 PM PDT

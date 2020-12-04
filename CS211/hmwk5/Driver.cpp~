@@ -1,0 +1,69 @@
+#include <iostream>
+#include "Stack.h"
+#include <string>
+
+using namespace std;
+
+bool properlyBalanced(string);
+bool checkStack(Stack&, string);
+
+int main()
+{
+  string str;
+  
+  do
+    {
+      cout << "Enter a String: " << endl;
+      getline(cin, str);
+      if(str != "Q" && str != "q")
+	if(properlyBalanced(str))
+	  cout << "This string is properly balanced" << endl;
+	else
+	  cout << "This string is not properly balanced" << endl;
+    }
+  while(str != "Q" && str != "q");
+
+  return 0;
+}
+
+bool properlyBalanced(string str)
+{
+  Stack stack;
+  return checkStack(stack,str);
+}
+
+bool checkStack(Stack& stack, string str)
+{
+  char c, c2;
+
+  for(int i = 0; i < str.length(); i++)
+    {
+      c = str[i];
+      if(c == '(' || c == '{' || c == '[')
+	stack.push(c);
+      else
+	if(c == ')' || c == '}' || c == ']')
+	  {
+	    stack.peek_top(c2);
+	    
+	    if(c2 == '-')
+	    {
+	      cout << "Extra Right Delimiter" << endl;
+	      return false;
+	    }
+	    if(c == ')' && c2 == '(')
+	      stack.pop(c2);
+	    else
+	      if(c == '}' && c2 == '{')
+		stack.pop(c2);
+	      else
+		if(c == ']' && c2 == '[')
+		  stack.pop(c2);
+		else
+		  cout << "Delimiter Mismatch" << endl;
+	  } 
+    }
+  if(!stack.isEmpty())
+    cout << "Missing Right Delimiter" << endl;
+  return stack.isEmpty();
+}

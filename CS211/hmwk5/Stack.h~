@@ -1,0 +1,26 @@
+#ifndef STACK_H
+#define STACK_H
+
+class Stack
+{
+ private:
+  struct Node
+  {
+    char val;
+    Node *next;
+  };
+
+  Node *top;
+
+ public:
+  Stack();
+  ~Stack();
+  void peek_top(char&);
+  void pop(char&);
+  void push(char);
+  void destroy();
+  void displayAll();
+  bool isEmpty();
+};
+
+#endif

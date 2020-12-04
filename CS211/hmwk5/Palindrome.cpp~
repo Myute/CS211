@@ -1,0 +1,71 @@
+/**
+ * Assignment - Homework 5, Problem 2
+ * Class - Palindrome.cpp
+ * Author - Kevyn Higbee
+ * Date Due - 5/7/18
+ */
+#include <iostream>
+#include "Stack.h"
+#include "Queue.h"
+
+using namespace std;
+
+/**
+ * summary - checks if a string is a palindrome
+ * @return true if string is a palindrome else false
+ */
+bool isPalindrome(string str);
+
+/**
+ * summary - Main
+ *           Loop of input and checks if input is a palindrome
+ */
+int main()
+{
+  string str;
+  do
+    {
+      cout << "Enter a string: ";
+      getline(cin, str);
+
+      if(str != "q" || str != "Q")
+	if(isPalindrome(str))
+	  cout << "This is a Palindrome" << endl;
+	else
+	  cout << "This is not a Palindrome" << endl;
+    }
+  while(str != "q" && str != "Q");
+
+  return 0;
+}
+
+/**
+ * isPalindrome definition
+ */
+bool isPalindrome(string str)
+{
+  Stack s;
+  Queue q;
+  char c1, c2;
+  
+  // load values into stack and queue
+  for(int i = 0; i < str.length(); i++)
+    if(str[i] != ' ')
+      {
+	q.enqueue(str[i]);
+	s.push(str[i]);
+      }
+  // compare stack and queue contents
+  while(!s.isEmpty() && !q.isEmpty())
+    {
+      s.pop(c1);
+      q.dequeue(c2);
+      
+      if(c1 != c2)
+	return false;
+    }
+  
+  s.destroy();
+  q.destroy();
+  return true;
+}

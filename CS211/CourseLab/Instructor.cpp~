@@ -1,0 +1,23 @@
+
+#include <iostream>
+#include "Instructor.h"
+
+void Instructor::set(string fName, string lName, char g, long ID, string offNum, long cN0, string cName0, int num0, long cN1, string cName1, int num1, long cN2, string cName2, int num2)
+{
+  firstName = fName;
+  lastName = lName;
+  gender = g;
+  employeeID = ID;
+  officeNum = offNum;
+  
+  courses[0].setCourse(cN0, cName0, num0);
+  courses[1].setCourse(cN1, cName1, num1);
+  courses[2].setCourse(cN2, cName2, num2);
+}
+void Instructor::print()
+{
+  cout << firstName << " " << lastName << " " << gender << " "
+       << employeeID << " " << officeNum << " ";
+  for(int i = 0; i < 3; i++)
+    courses[i].print();
+}

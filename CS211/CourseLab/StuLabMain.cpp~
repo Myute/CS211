@@ -1,0 +1,20 @@
+#include <iostream>
+#include <string>
+#include "Student.h"
+
+using namespace std;
+
+int main()
+{
+  Student student1;
+  Student student2("Unknown", "PHYS", "graduate", 0);
+  
+
+  student1.print();
+
+  student2.getData();
+
+  student2.print();
+
+  return 0;
+}

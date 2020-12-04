@@ -1,0 +1,302 @@
+/**
+ *   Assignment: Homework Assignment 1
+ *   Author: Kevyn Higbee
+ *   
+ *   Date Created: 2.16.18
+ */
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <iomanip>
+#include <sstream>
+
+using namespace std;
+
+// Structure Definition
+struct Division                                                                // holds a divisions name and its quarterly sales
+{
+  string name;
+  double quarterlySales[4];
+};
+
+// Function Prototypes (required functions)
+void add(vector<Division>&, string, double, double, double, double);           // adds a division to the list
+void update(vector<Division>&, string, int, double);                           // updates a division in the list
+void remove(vector<Division>&, string);                                        // removes a division from the list
+void displaySales(vector<Division>&);                                          // displays a divisions sales as well as the company's yearly sales
+void highestLowest(vector<Division>&);                                         // displays the highest and lowest quarters for the company
+void save(vector<Division>&);                                                  // saves the list in an output file
+double calcTotalSales(Division&);                                              // calculates the total sales of an individual division
+double calcTotalSales(vector<Division>&);                                      // calculates the total sales
+void search(vector<Division>&, string);                                        // prints the searched index
+
+// Function Prototypes (convenient functions)
+string toString(Division&);                                                    // returns a division in a printable string format
+string addSpace(string);                                                       // adds spaces to the name of a division
+//void printall(vector<Division>&);                                              // prints all division in vector
+int find(const vector<Division>&, string);                                           // returns the index of the searched division
+string header();                                                               // returns a the header for output as a string
+
+// main() Function
+int main()
+{
+  // variables and objects
+  vector<Division> v;
+  string s0;
+  double d0, d1, d2, d3;
+  int i0;
+  ifstream fin;
+  string func;
+
+  fin.open("DivisionTrans.txt");
+  
+  // get file input
+  fin >> func;
+  while(fin)
+    {
+      if(func == "add")
+	{
+	  fin >> s0 >> d0 >> d1 >> d2 >> d3;
+	  add(v, s0, d0, d1, d2, d3);
+	}
+      else
+	if(func == "search")
+	  {
+	    fin >> s0;
+	    search(v, s0);
+	  }
+	else
+	  if(func == "delete")
+	    {
+	      fin >> s0;
+	      remove(v, s0);
+	    }
+	  else
+	    if(func == "display")
+		displaySales(v);
+	    else
+	      if(func == "update")
+		{
+		  fin >> s0 >> i0 >> d0;
+		  update(v, s0, i0 - 1, d0);
+		}
+	      else
+		if(func == "calculateTotalSales")
+		  calcTotalSales(v);
+		else
+		  if(func == "highestLowestQuarter")
+		    highestLowest(v);
+		  else
+		    if(func == "save")
+		      save(v);
+		    else
+		    cout << "unknown command" << endl;
+
+      fin >> func;  // read next command from file
+    }
+  return 0;
+}
+
+/***********************************
+ *      Function Definitions       *
+ ***********************************/
+
+// adds a division to the vector
+void add(vector<Division>& v, string name, double num0, double num1, double num2, double num3)
+{
+  Division tmp;
+  bool valid = true;
+  tmp.name = name;
+  tmp.quarterlySales[0] = num0;
+  tmp.quarterlySales[1] = num1;
+  tmp.quarterlySales[2] = num2;
+  tmp.quarterlySales[3] = num3;
+
+  // check if any values are negative
+  for(int i = 0; i < 4; i++)
+    if(tmp.quarterlySales[i] < 0)
+      valid = false;
+  // check if element name belongs to any elemetns in list
+  if(find(v, tmp.name) != -1)
+    valid = false;
+
+  cout << toString(tmp) << endl;
+  if(valid)
+    {
+      v.push_back(tmp);
+      cout << "successfully added to divisions" << endl;
+    }
+  else
+    cout << "Invalid Data, can not be added to divisions" << endl;
+}
+
+// updates a division if found in vector
+void update(vector<Division>& v, string name, int quarter, double sales)
+{
+  int index = find(v, name);
+  if(quarter < 0 || quarter > 3)
+    cout << "Cannot update. Quarter does not exist" << endl;
+  else
+    if(index != -1)
+      {
+	v[index].quarterlySales[quarter] = sales;
+      }
+    else
+      cout << "No such division exists, can not update" << endl;
+}
+
+// removes all elements containing arguement name in the name variable of the Division struct
+void remove(vector<Division>& v, string name)
+{
+  int index = find(v, name);
+  cout << "Delete: " << name << endl;
+  if(index == -1)
+    cout << "No such division exists, cannot be deleted" << endl;
+  while(index != -1)
+    {
+      cout << "Deleting: " << v[index].name << endl;
+      v.erase(v.begin() + index);
+      index = find(v, name);
+    }
+}
+
+// displays all the divisions in the vector
+void displaySales(vector<Division>& v)
+{
+  cout << header();
+  for(int i = 0; i < v.size(); i++)
+    cout << toString(v[i]);
+}
+
+// calculates and prints which quarters have the highest and lowest sales
+void highestLowest(vector<Division>& v)
+{
+  int high, low, tmp;
+  double total[4];
+  // find totals of each quarter
+  for(int i = 0; i < v.size(); i++)
+      for(int z = 0; z < 4; z++)
+	total[z] += v[i].quarterlySales[z];
+  // find highest quarter
+  if(total[0] >= total[1] && total[0] >= total[2] && total[0] >= total[3])
+    high = 0;
+  else
+    if(total[1] >= total[2] && total[1] >= total[3])
+      high = 1;
+    else
+      if(total[2] >= total[3])
+	high = 2;
+      else
+	high = 3;
+  // find lowest quarter
+  if(total[0] <= total[1] && total[0] <= total[2] && total[0] <= total[3])
+     low = 0;
+     else
+       if(total[1] <= total[2] && total[1] <= total[3])
+	 low = 1;
+       else
+	 if(total[2] <= total[3])
+	   low = 2;
+	 else
+	   low = 3;
+  // print
+  cout << "The highest earning quarter was Quarter " << high + 1 << " with " << fixed << showpoint << setprecision(2) << total[high] << endl
+       << "The lowest earning quarter was Quarter " << low + 1 << " with " << total[low] << endl;
+}
+
+// saves the vector in a formatted text file
+void save(vector<Division>& v)
+{
+  ofstream fout;
+  fout.open("DivisionsOut.txt");
+  fout << header();
+  for(int i = 0; i < v.size(); i++)
+    fout << toString(v[i]);
+  fout.close();
+}
+
+// calculates the total sales of an individal division
+double calcTotalSales(Division& d)
+{
+  double total = 0;
+  for(int i = 0; i < 4; i++)
+    total += d.quarterlySales[i];
+  return total;
+}
+
+// calculats the total sales of all divisions
+double calcTotalSales(vector<Division>& v)
+{
+  double total = 0;
+  for(int i = 0; i < v.size(); i++)
+    total += calcTotalSales(v[i]);
+  return total;
+}
+
+// prints all divisions containing the passed string
+void search(vector<Division>& v, string name)
+{
+  int index = find(v, name);
+  if(index != -1)
+    cout << header() << toString(v[index]);
+  else
+    cout << "No such Division Exists" << endl;
+}
+
+// returns the index of the first element containing string in the name, ekse returns -1
+int find(const vector<Division>& v, string name)
+{
+  for(int i = 0; i < v.size(); i++)
+    if(v[i].name.find(name) != v[i].name.npos)
+	return i;
+
+  return -1;
+}
+// creates a string version of the division
+string toString(Division& div)
+{
+  stringstream str;
+  str << left << setw(22) << addSpace(div.name) 
+      << right << fixed << showpoint << setprecision(2) << setw(12) << div.quarterlySales[0]
+      << setw(12) << div.quarterlySales[1]
+      << setw(12) << div.quarterlySales[2]
+      << setw(12) << div.quarterlySales[3]
+      << setw(12) << calcTotalSales(div) << endl;
+  return str.str();
+}
+// adds spaces to the name of the division for printing
+string addSpace(string name)
+{
+  for(int i = 1; i < name.size(); i++)
+    if(name[i] > 64 && name[i] < 91)
+      {
+	name.insert(i, " ");
+	i++;
+      }
+  return name;
+}
+// prints every element in the list
+/*void printall(vector<Division>& v)
+{
+  cout << "-------------------------------------------------------------" << endl;
+  for(int i = 0; i < v.size(); i++)
+    {
+      cout << i << " " << toString(v[i]) << endl;
+    }
+  cout << "-------------------------------------------------------------" << endl;
+  }*/
+// returns the header of the output
+string header()
+{
+  stringstream str;
+  str << left <<  setw(25) << "Division"
+      << setw(12) << "Quarter 1"
+      << setw(12) << "Quarter 2"
+      << setw(12) << "Quarter 3"
+      << setw(12) << "Quarter 4"
+      << setw(12) << "Total Sales" << endl
+      << "-------------------------------------------------------------------------------------" << endl;
+  return str.str();
+}

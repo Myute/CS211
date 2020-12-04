@@ -1,0 +1,63 @@
+#include <iostream>
+#include <string>
+#include <fstream>
+#include <iomanip>
+
+using namespace std;
+
+int main()
+{
+  ifstream inFile;
+  ofstream outFile;
+  
+  const double PREM_ACC = 0.05;
+  const double CHOICE_ACC = 0.03;
+  const double BASIC_ACC = 0.01;
+  
+  string accType;
+  int accNum;
+  double startBal;
+  double deposit;
+  double withdrawal;
+  double endBal = 0;
+  
+  // start + deposit - withdrawal
+  inFile.open("accounts.txt");
+  outFile.open("outAccounts.txt");
+
+  if(!inFile)
+    {
+    cout << "The File Does not Exsist" << endl;
+    }
+  else
+  {
+    outFile << "Account" << setw(8) << "Type" << setw(20) << "StartBalance" << setw(11) << "Deposit" << setw(14) << "Withdrawal" << setw(14) << "EndBalance" << endl
+	    <<"--------------------------------------------------------------------------------" << endl;
+       
+    while(inFile)
+    {
+      inFile >> accNum >> accType >> startBal >> deposit >> withdrawal;
+      endBal = startBal + deposit - withdrawal;
+  
+      if(accType == "Premium")
+	endBal += endBal * PREM_ACC;
+      else
+	if(accType == "Basic")
+	  endBal += endBal * BASIC_ACC;
+	else
+	  if(accType == "Choice")
+	    endBal += endBal * CHOICE_ACC;
+      
+      outFile << left << setw(11) << accNum 
+	      << left << setw(8) << accType 
+	      << right << fixed << showpoint << setprecision(2) << setw(16) << startBal 
+	      << right << fixed << showpoint << setprecision(2) << setw(11) << deposit 
+	      << right << setw(14) << fixed << showpoint << setprecision(2) << withdrawal 
+	      << right << fixed << showpoint << setprecision(2) << setw(14) << endBal << endl;
+    }
+    
+    inFile.close();
+    outFile.close();
+  }
+  return 0;
+}

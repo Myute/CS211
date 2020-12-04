@@ -1,0 +1,11 @@
+#include "HealthRecords.h"
+
+using namespace std;
+
+int main()
+{
+  HealthRecords hr;
+  hr.processTransactionFile("HW2.txt");
+
+  return 0;
+};

@@ -1,0 +1,19 @@
+Script started on Mon 07 May 2018 10:43:48 PM PDT
+]0;higbe005@empress:~/CS211/hmwk5[?1034h[higbe005@empress hmwk5]$ g++ Stack.h Queue.h
+]0;higbe005@empress:~/CS211/hmwk5[higbe005@empress hmwk5]$ g++ std[K[K[K-std=c++11 Stack.cpp Queue.cpp Paldin[K[K[Kindrome.cpp
+]0;higbe005@empress:~/CS211/hmwk5[higbe005@empress hmwk5]$ ./a.out
+Enter a string: kayak
+This is a Palindrome
+Enter a string: I
+This is a Palindrome
+Enter a string: sees
+This is a Palindrome
+Enter a string: able was i saw elba
+This is a Palindrome
+Enter a string: c++ is fun
+This is not a Palindrome
+Enter a string: q
+]0;higbe005@empress:~/CS211/hmwk5[higbe005@empress hmwk5]$ exit
+exit
+
+Script done on Mon 07 May 2018 10:44:36 PM PDT

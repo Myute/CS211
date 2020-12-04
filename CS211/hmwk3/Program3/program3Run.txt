@@ -1,0 +1,13 @@
+Script started on Mon 09 Apr 2018 07:21:38 PM PDT
+]0;higbe005@empress:~/CS211/hmwk3[?1034h[higbe005@empress hmwk3]$ g++ Driver3.cpp Patient.cpp
+]0;higbe005@empress:~/CS211/hmwk3[higbe005@empress hmwk3]$ ./a.out 
+ID       Name           Birth Date     Gender
+------------------------------------------------
+10023    Joe Garcia     11/10/1979     M
+10024    Suzy Walter    01/01/2010     F
+10025    Amelia Perez   12/05/1983     F
+10026    Tim Ducrest    01/12/2000     M
+]0;higbe005@empress:~/CS211/hmwk3[higbe005@empress hmwk3]$ exit
+exit
+
+Script done on Mon 09 Apr 2018 07:21:56 PM PDT

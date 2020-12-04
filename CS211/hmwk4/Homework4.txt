@@ -1,0 +1,119 @@
+Script started on Mon 23 Apr 2018 02:32:32 PM PDT
+]0;higbe005@empress:~/CS211/hmwk4[?1034h[higbe005@empress hmwk4]$ g++ Image.h
+]0;higbe005@empress:~/CS211/hmwk4[higbe005@empress hmwk4]$ g++ ImageViewer.h
+]0;higbe005@empress:~/CS211/hmwk4[higbe005@empress hmwk4]$ g++ Image.cpp ImageViewer.cpp Driver.cpp
+]0;higbe005@empress:~/CS211/hmwk4[higbe005@empress hmwk4]$ ./a.out
+Added "C:/Users/Mayssaa/CS211/HW4/roadtrip" : 
+
+Added "C:/Users/Mayssaa/CS211/HW4/graduation" : 
+
+Added "C:/Users/Mayssaa/CS211/HW4/family" : 
+
+Added "C:/Users/Mayssaa/CS211/HW4/party" : 
+
+Added "C:/Users/Mayssaa/CS211/HW4/car" : 
+
+Added "C:/Users/Mayssaa/CS211/HW4/beach" : 
+
+Added "C:/Users/Mayssaa/CS211/HW4/mountains" : 
+
+Added "C:/Users/Mayssaa/CS211/HW4/baby" : 
+
+Added "C:/Users/Mayssaa/CS211/HW4/selfie" : 
+
+Added "C:/Users/Mayssaa/CS211/HW4/faces" : 
+
+Added "C:/Users/Mayssaa/CS211/HW4/random" : 
+
+Added "C:/Users/Mayssaa/CS211/HW4/summer" : 
+
+Displaying slideshow: 
+C:/Users/Mayssaa/CS211/HW4/baby 960 png 1024x746
+C:/Users/Mayssaa/CS211/HW4/beach 302 jpg 2048x1365
+C:/Users/Mayssaa/CS211/HW4/car 1770 jpg 2448x3264
+C:/Users/Mayssaa/CS211/HW4/faces 80.7 jpeg 717x558
+C:/Users/Mayssaa/CS211/HW4/family 3330 jpg 2400x4240
+C:/Users/Mayssaa/CS211/HW4/graduation 4370 jpg 6000x3376
+C:/Users/Mayssaa/CS211/HW4/mountains 243 png 1280x798
+C:/Users/Mayssaa/CS211/HW4/party 373 jpg 960x1280
+C:/Users/Mayssaa/CS211/HW4/random 299 jpeg 537x400
+C:/Users/Mayssaa/CS211/HW4/roadtrip 3840 jpg 3376x6000
+C:/Users/Mayssaa/CS211/HW4/selfie 257 bmp 512x512
+C:/Users/Mayssaa/CS211/HW4/summer 257 bmp 512x512
+
+Viewing "car" :
+C:/Users/Mayssaa/CS211/HW4/car 1770 jpg 2448x3264
+
+Viewing next Image:
+C:/Users/Mayssaa/CS211/HW4/faces 80.7 jpeg 717x558
+
+Viewing previous Image:
+C:/Users/Mayssaa/CS211/HW4/car 1770 jpg 2448x3264
+
+Viewing previous Image:
+C:/Users/Mayssaa/CS211/HW4/beach 302 jpg 2048x1365
+
+Compressing Current Image: 
+Successfully compressed image
+
+Viewing previous Image:
+C:/Users/Mayssaa/CS211/HW4/baby 960 png 1024x746
+
+Deleting Current Image: 
+
+Viewing previous Image:
+ERROR: No elements before current
+
+Viewing next Image:
+C:/Users/Mayssaa/CS211/HW4/car 1770 jpg 2448x3264
+
+Viewing next Image:
+C:/Users/Mayssaa/CS211/HW4/faces 80.7 jpeg 717x558
+
+Viewing next Image:
+C:/Users/Mayssaa/CS211/HW4/family 3330 jpg 2400x4240
+
+Viewing next Image:
+C:/Users/Mayssaa/CS211/HW4/graduation 4370 jpg 6000x3376
+
+Deleting Current Image: 
+
+Viewing next Image:
+C:/Users/Mayssaa/CS211/HW4/mountains 243 png 1280x798
+
+Viewing next Image:
+C:/Users/Mayssaa/CS211/HW4/party 373 jpg 960x1280
+
+Viewing next Image:
+C:/Users/Mayssaa/CS211/HW4/random 299 jpeg 537x400
+
+Viewing next Image:
+C:/Users/Mayssaa/CS211/HW4/roadtrip 3840 jpg 3376x6000
+
+Viewing next Image:
+C:/Users/Mayssaa/CS211/HW4/selfie 257 bmp 512x512
+
+Viewing next Image:
+C:/Users/Mayssaa/CS211/HW4/summer 257 bmp 512x512
+
+Viewing next Image:
+ERROR: No elements after current
+
+Deleting Current Image: 
+
+Deleting Current Image: 
+
+Displaing slideshow in reverse: 
+C:/Users/Mayssaa/CS211/HW4/roadtrip 3840 jpg 3376x6000
+C:/Users/Mayssaa/CS211/HW4/random 299 jpeg 537x400
+C:/Users/Mayssaa/CS211/HW4/party 373 jpg 960x1280
+C:/Users/Mayssaa/CS211/HW4/mountains 243 png 1280x798
+C:/Users/Mayssaa/CS211/HW4/family 3330 jpg 2400x4240
+C:/Users/Mayssaa/CS211/HW4/faces 80.7 jpeg 717x558
+C:/Users/Mayssaa/CS211/HW4/car 1770 jpg 2448x3264
+C:/Users/Mayssaa/CS211/HW4/beach 241.6 jpg 2048x1365
+
+]0;higbe005@empress:~/CS211/hmwk4[higbe005@empress hmwk4]$ exit
+exit
+
+Script done on Mon 23 Apr 2018 02:33:20 PM PDT

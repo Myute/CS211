@@ -1,0 +1,15 @@
+Script started on Mon 09 Apr 2018 08:28:29 PM PDT
+]0;higbe005@empress:~/CS211/hmwk3/Program1[?1034h[higbe005@empress Program1]$ g++ matchIndex.cpp
+]0;higbe005@empress:~/CS211/hmwk3/Program1[higbe005@empress Program1]$ ./a.out
+Searching array 1
+There are no matching indices
+Searching array 2
+The matching index value is 7
+Searching array 3
+The matching index value is 2
+Searching array 4
+The matching index value is 9
+]0;higbe005@empress:~/CS211/hmwk3/Program1[higbe005@empress Program1]$ exit
+exit
+
+Script done on Mon 09 Apr 2018 08:28:45 PM PDT

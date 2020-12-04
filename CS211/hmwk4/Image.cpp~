@@ -1,0 +1,22 @@
+#include "Image.h"
+#include <iostream>
+
+using namespace std;
+
+Image::Image(string n, double s, string f, string r)
+{
+  name = n;
+  size = s;
+  format = f;
+  resolution = r;
+
+  prev = NULL;
+  next = NULL;
+}
+void Image::print()
+{
+  cout << name << " " 
+       << size << " " 
+       << format << " " 
+       << resolution << endl;
+}

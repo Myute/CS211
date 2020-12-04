@@ -1,0 +1,334 @@
+/*******************************************
+ *  Class - ImageViewer.cpp
+ *  Assignment - A4
+ *  Author - Kevyn Higbee
+ *  Date - 4/23/2018
+ ******************************************/
+
+#include "ImageViewer.h"
+#include <string>
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+/****************** CLASS CONSTRUCTOR ********************/
+
+/**
+ * Summary - Creates new ImageViewer Object
+ *           Head and current pointers are initialized to NULL
+ */
+ImageViewer::ImageViewer()
+{
+  head = NULL;
+  current = NULL;
+}
+
+/****************** CLASS DECONSTRUCTOR ******************/
+
+/**
+ * Summary - Frees all memory used by this class back to Heap
+ */
+ImageViewer::~ImageViewer()
+{
+  Image *imgPtr = head;
+  Image *currentPtr = NULL;
+  while(imgPtr)
+    {
+      currentPtr = imgPtr;
+      imgPtr = imgPtr -> next;
+      delete currentPtr;
+    }
+}
+
+/****************** FUNCTION DEFINITIONS *****************/
+
+/**
+ * Summary - Inserts an image into the list of Images
+ *           Images are inserted alphabetically
+ *
+ * @param n The name of the image to be added
+ * @param s The size of the image to be added
+ * @param f The format of hte image to be added
+ * @param r The resolution of the image to be added
+ */
+void ImageViewer::addImage(string n, double s, string f, string r)
+{
+  Image* imgPtr = new Image(n,s,f,r);
+  Image* currentPtr = head;
+  // if list is empty
+  if(!head)
+    head = imgPtr;
+  else
+    // if the new image must be inserted at headd of list
+    if(head -> name >= imgPtr -> name)
+      {
+	imgPtr -> next = head;
+	head -> prev = imgPtr;
+	head = imgPtr;
+      }
+    else
+      {
+	// traverse list until appropriate spot is found or at end of list
+	while(currentPtr -> next && currentPtr -> next -> name < imgPtr -> name)
+	  currentPtr = currentPtr -> next;
+	imgPtr -> next = currentPtr -> next;
+
+	// if at the end of the list
+	if(currentPtr -> next)
+	  imgPtr -> next -> prev = imgPtr;
+	
+	currentPtr -> next = imgPtr; 
+	imgPtr -> prev = currentPtr;
+      }
+}
+
+/**
+ * Summary - Displays the first Image to match the passed name
+ *           Updates the ImageViewer's current pointer to this image
+ *           If there is no image with a matching name, displays an error
+ *
+ * @param n The name of the string to be displayed
+ */
+void ImageViewer::viewImage(string n)
+{
+  Image* imgPtr = head;
+  
+  // if the list is empty
+  if(imgPtr == NULL)
+    cout << "ERROR: List is empty" << endl;
+  else
+    {
+      // traverse list until end or matching name is found
+      while(imgPtr && imgPtr -> name.find(n) == string::npos)
+	imgPtr = imgPtr -> next;
+      
+      // if at end of the list
+      if(!imgPtr)
+	cout << "ERROR: No Image in list with the name \""
+	     << n << "\"" <<endl;
+      else
+	// dipslay the image
+	imgPtr -> print();
+        current = imgPtr;
+    }
+}
+
+/**
+ * Summary - Displays next image in list
+ *           Updates current pointer to this element
+ *           If there is no next element displays error
+ */
+void ImageViewer::viewNextImage()
+{
+  // if the current pointer or head in list does not exist
+  if(!current || !head)
+    cout << "ERROR: List is either empty or current does not exist" << endl;
+  else
+      // check if current has a next image
+      if(!current -> next)
+	cout << "ERROR: No elements after current" << endl;
+      else
+        {
+	  // set current image to currents next image and display
+	  current = current -> next;
+	  current -> print();
+	}
+}
+
+/**
+ * Summary - Dipslays the previous image in the list
+ *           Updates current pointer to this element
+ *           If there is no previous element dipslays an error
+ */
+void ImageViewer::viewPreviousImage()
+{
+  // if the current or head of list does not exist
+  if(!current && !head)
+    cout << "ERROR: List is either empty or current does not exist" << endl;
+  else
+    // check if current element is head
+    if(!current -> prev)
+      cout << "ERROR: No elements before current" << endl;
+    else
+      {
+	// set current to currents previous and display
+	current = current -> prev;
+	current -> print();
+      }
+}
+
+/** 
+ * Summary - removes the current pointer from the list
+ */
+void ImageViewer::deleteCurrentImage()
+{
+  Image* tmpPtr = NULL;
+
+  if(!head || !current)
+    cout << "ERROR: List is either empty or current does not exist" << endl;
+  else
+    {
+      // if current is not head of the list
+      if(current -> prev)
+	current -> prev -> next = current -> next;
+      // if current is not tail of the list
+      if(current -> next)
+	current -> next -> prev = current -> prev;
+      
+      // change current to either previous or next
+      if(current -> prev)
+	tmpPtr = current -> prev;
+      else
+	if(current -> next)
+	  tmpPtr = current -> next;
+
+      delete current;
+
+      if(head == NULL)
+	cout << "RIP Head" << endl;
+      
+      current =  tmpPtr;
+    }
+}
+
+/**
+ * Summary - Compresses the current image according to the passed ratio
+ *           
+ * @param ratio The ratio to compress the image
+ */
+void ImageViewer::compressCurrentImage(double ratio)
+{
+  // if the current element does not exist
+  if(!current)
+    cout << "ERROR: No current element selected " << endl;
+  else
+    {
+      current -> size = current -> size * ratio;
+
+      cout << "Successfully compressed image" << endl;
+    }
+}
+
+/**
+ * Summary - displays every image in order
+ */
+void ImageViewer::slideshow()
+{
+  Image* imgPtr;
+  if(!head)
+    cout << "ERROR: List is empty" << endl;
+  else
+    {
+      imgPtr = head;
+      // traverse list and print images
+      while(imgPtr)
+	{
+	  imgPtr -> print();
+	  imgPtr = imgPtr -> next;
+	}
+    }
+}
+
+/**
+ * Summary - prints the list in reverse order
+ */
+void ImageViewer::reverseSlideshow()
+{
+  Image* imgPtr = NULL;
+  if(!head)
+    cout << "ERROR: List is empty" << endl;
+  else
+    {
+      //reverseSlideshow(head);
+      imgPtr = head;
+      while(imgPtr -> next)
+	imgPtr = imgPtr -> next;
+      while(imgPtr)
+	{
+	  imgPtr -> print();
+	  imgPtr = imgPtr -> prev;
+	}
+    }
+}
+
+/**
+ * Summary - processes an input file
+ */
+void ImageViewer::processTransactionFile()
+{
+  fstream fin;
+  string fileName = "transaction.txt", command, imgName, imgFormat, imgResolution;
+  double imgSize, ratio;
+
+  fin.open(fileName.c_str());
+
+  if(!fin)
+    cout << "ERROR: Unable to open transaction" << endl;
+  else
+    while(fin >> command)
+      {
+	// addImage command
+	if(command == "addImage")
+	  {
+	    fin >> imgName >> imgSize >> imgFormat >> imgResolution;
+	    addImage(imgName, imgSize, imgFormat, imgResolution);
+	    cout << "Added \"" << imgName << "\" : " << endl;
+	  }
+	else
+	  // slideshow command
+	  if(command == "slideshow")
+	    {
+	      cout << "Displaying slideshow: " << endl;
+	      slideshow();
+	    }
+	  else
+	    // viewNext command
+	    if(command == "viewImage")
+	      {
+		fin >> imgName;
+		cout << "Viewing \"" << imgName << "\" :" << endl;
+		viewImage(imgName);
+	      }
+	    else
+	      // viewNextImage command
+	      if(command == "viewNextImage")
+		{
+		  cout << "Viewing next Image:" << endl;
+		  viewNextImage();
+		}
+	      else
+		// viewPreviousImage command
+		if(command == "viewPreviousImage")
+		  {
+		    cout << "Viewing previous Image:" << endl;
+		    viewPreviousImage();
+		  }
+		else
+		  // compressImage command
+		  if(command == "compressCurrentImage")
+		    {
+		      fin >> ratio;
+		      cout << "Compressing Current Image: " << endl;
+		      compressCurrentImage(ratio);
+		    }
+		  else
+		    // deleteImage command
+		    if(command == "deleteCurrentImage")
+		      {
+			cout << "Deleting Current Image: " << endl;
+			deleteCurrentImage();
+		      }
+		    else
+		      // reverseSlideshow command
+		      if(command == "reverseSlideshow")
+			{
+			  cout << "Displaing slideshow in reverse: " << endl;
+			  reverseSlideshow();
+			}
+		      else
+			// if the command is not accounted for
+			cout << "ERROR: Unknown command \"" << command << "\"" << endl;
+	cout << endl;
+      }
+}

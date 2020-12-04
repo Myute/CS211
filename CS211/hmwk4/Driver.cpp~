@@ -1,0 +1,16 @@
+
+#include <iostream>
+#include <string>
+#include "Image.h"
+#include "ImageViewer.h"
+
+using namespace std;
+
+int main ()
+{
+  ImageViewer viewer;
+
+  viewer.processTransactionFile();
+
+  return 0;
+}

@@ -1,0 +1,25 @@
+#ifndef QUEUE_H
+#define QUEUE_H
+
+class Queue
+{
+ private:
+  struct Node
+  {
+    char val;
+    Node *next;
+  };
+  
+  Node *head;
+  Node *tail;
+ public:
+  Queue();
+  ~Queue();
+  void enqueue(char);
+  void dequeue(char&);
+  void destroy();
+  void displayAll() const;
+  bool isEmpty() const;
+};
+
+#endif

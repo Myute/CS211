@@ -1,0 +1,402 @@
+Script started on Mon 05 Mar 2018 08:42:19 PM PST
+]0;higbe005@empress:~/CS211/hmwk2[?1034h[higbe005@empress hmwk2]$ g++ Driv[2Plogoutemacs HealthRecords.cpp[15P./a.out g++ Driver.cpp HealthRecords.cpp Patient.cpp Checkup.cpp[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[33Pemacs HealthRecords.cpp[15P./a.out g++ Driver.cpp HealthRecords.cpp Patient.cpp Checkup.cpp[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[33Pemacs HealthRecords.cpp[15P./a.out g++ Driver.cpp HealthRecords.cpp Patient.cpp Checkup.cpp[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[33Pemacs HealthRecords.cpp[15P./a.out g++ Driver.cpp HealthRecords.cpp Patient.cpp Checkup.cpp[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[33Pemacs HealthRecords.cpp[15P./a.out g++ Driver.cpp HealthRecords.cpp Patient.cpp Checkup.cpp[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[33Pemacs HealthRecords.cpp[15P./a.out g++ Driver.cpp HealthRecords.cpp Patient.cpp Checkup.cpp[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[33Pemacs HealthRecords.cpp[15P./a.out emacs HealthRecords.cppg++ Driver.cpp HealthRecords.cpp Patient.cpp Checkup.cpp[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./a.out [Kemacs HealthRecords.cppg++ Driver.cpp HealthRecords.cpp Patient.cpp Checkup.cpp[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./a.out [Kemacs HealthRecords.cppg++ Driver.cpp HealthRecords.cpp Patient.cpp Checkup.cpp[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./a.out [Kemacs HealthRecords.cppg++ Driver.cpp HealthRecords.cpp Patient.cpp Checkup.cpp[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./a.out [Kemacs HealthRecords.cppg++ Driver.cpp HealthRecords.cpp Patient.cpp Checkup.cpp[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./a.out [Kemacs HealthRecords.cppg++ Driver.cpp HealthRecords.cpp Patient.cpp Checkup.cpp[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./a.out [K[K[K[K[K[K[K[K[Kg++ Checkup.h
+]0;higbe005@empress:~/CS211/hmwk2[higbe005@empress hmwk2]$ g++ Checkup.h[1P.h[1P.h[1P.h[1P.h[1P.h[1P.h[1P.hP.ha.ht.hi.he.hn.ht.h
+^[[A^[[B        ]0;higbe005@empress:~/CS211/hmwk2[higbe005@empress hmwk2]$ g++ Patient.h[1P.h[1P.h[1P.h[1P.h[1P.h[1P.h[1P.hH.he.ha.hl.ht.hh.hR.hecords..h[1Ph
+]0;higbe005@empress:~/CS211/hmwk2[higbe005@empress hmwk2]$ g++ HealthRecords.h[6PPatient.hCheckup.h[7Plogoutemacs HealthRecords.cpp[15P./a.out g++ Driver.cpp HealthRecords.cpp Patient.cpp Checkup.cpp
+]0;higbe005@empress:~/CS211/hmwk2[higbe005@empress hmwk2]$ ./a.out 
+===============================================================================================
+CreateNewPatient Joe Garcia 432345673 M 11/10/1979
+
+===============================================================================================
+CreateNewPatient Suzy Walter 876523067 F 01/01/2010
+
+===============================================================================================
+CreateNewPatient Amelia Perez 876007654 F 12/05/1983
+
+===============================================================================================
+CreateNewPatient Tim Ducrest 123282345 M 01/12/2000
+
+===============================================================================================
+CreateNewPatient Amelia Perez 876007654 F 12/05/1983
+
+Cannot add patient. SSN Already exists
+===============================================================================================
+CreateNewPatient Suzy Walter 987667654 F 09/20/1965
+
+===============================================================================================
+PrintAllPatients
+
+All Patient Records:
+-----------------------------------------------
+Account Number: 5000
+Name: Joe Garcia
+Gender: M
+Date of Birth: 11/10/1979
+-----------------------------------------------
+Account Number: 5002
+Name: Suzy Walter
+Gender: F
+Date of Birth: 01/01/2010
+-----------------------------------------------
+Account Number: 5004
+Name: Amelia Perez
+Gender: F
+Date of Birth: 12/05/1983
+-----------------------------------------------
+Account Number: 5006
+Name: Tim Ducrest
+Gender: M
+Date of Birth: 01/12/2000
+-----------------------------------------------
+Account Number: 5008
+Name: Suzy Walter
+Gender: F
+Date of Birth: 09/20/1965
+-----------------------------------------------
+===============================================================================================
+AddPatientCheckup 5000 10/10/2015 5.8 210 160 33 178 88 123/78
+
+===============================================================================================
+AddPatientCheckup 5000 09/29/2016 5.8 215 165 29 312 91 129/86
+
+===============================================================================================
+AddPatientCheckup 5002 11/06/2016 4.1 70 180 69 120 80 101/78
+
+===============================================================================================
+AddPatientCheckup 5002 04/10/2017 4.2 75 198 65 120 81 100/76
+
+===============================================================================================
+AddPatientCheckup 5004 11/10/2015 5.1 150 188 58 58 89 99/53
+
+===============================================================================================
+AddPatientCheckup 5004 10/22/2016 5.1 157 210 68 135 84 99/50
+
+===============================================================================================
+AddPatientCheckup 5004 11/06/2017 5.1 168 182 48 70 88 99/56
+
+===============================================================================================
+AddPatientCheckup 5005 05/11/2017 5.2 165 180 49 70 88 100/56
+
+No Patient with Account Number 5005
+===============================================================================================
+AddPatientCheckup 5006 02/04/2017 5.9 170 202 36 301 90 126/87
+
+===============================================================================================
+AddPatientCheckup 5008 08/18/2017 5.4 180 165 42 200 105 105/76
+
+===============================================================================================
+PrintPatientHistory 5000
+
+Joe Garcia
+Born on 11/10/1979
+                                        10/10/2015  09/29/2016  
+------------------------------------------------------------------------------------------------
+Total Cholesterol:                        193         194         
+(Reference Range: 125-199mg/dL)
+
+HDL Cholesterol:                          33          29          
+(Reference Range: > or = 40 mg/dL)
+
+Triglycerides:                            178         312         
+(Reference Range: < 150 mg/dL)
+
+LDL Cholesterol:                          92          74          
+(Reference Range: < 130 mg/dL)
+
+Cholesterol / HDL Cholesterol Ratio:      4           5           
+(Reference Range: < or = 5.0)
+
+Glucose:                                  88          91          
+(Reference Range: 65-99 mg/dL)
+
+Blood Pressure:                           123/78      129/86      
+(Reference Range: < 120/80 mmHg)
+
+Body Mass Index:                          30.4759     31.2015     
+(Reference Range: 18.5-24.9)
+
+------------------------------------------------------------------------------------------------
+===============================================================================================
+PrintPatientHistory 5002
+
+Suzy Walter
+Born on 01/01/2010
+                                        11/06/2016  04/10/2017  
+------------------------------------------------------------------------------------------------
+Total Cholesterol:                        249         263         
+(Reference Range: 125-199mg/dL)
+
+HDL Cholesterol:                          69          65          
+(Reference Range: > or = 40 mg/dL)
+
+Triglycerides:                            120         120         
+(Reference Range: < 150 mg/dL)
+
+LDL Cholesterol:                          87          109         
+(Reference Range: < 130 mg/dL)
+
+Cholesterol / HDL Cholesterol Ratio:      2           3           
+(Reference Range: < or = 5.0)
+
+Glucose:                                  80          81          
+(Reference Range: 65-99 mg/dL)
+
+Blood Pressure:                           101/78      100/76      
+(Reference Range: < 120/80 mmHg)
+
+Body Mass Index:                          20.3293     20.7566     
+(Reference Range: 18.5-24.9)
+
+------------------------------------------------------------------------------------------------
+===============================================================================================
+PrintPatientHistory 5004
+
+Amelia Perez
+Born on 12/05/1983
+                                        11/10/2015  10/22/2016  11/06/2017  
+------------------------------------------------------------------------------------------------
+Total Cholesterol:                        246         278         230         
+(Reference Range: 125-199mg/dL)
+
+HDL Cholesterol:                          58          68          48          
+(Reference Range: > or = 40 mg/dL)
+
+Triglycerides:                            58          135         70          
+(Reference Range: < 150 mg/dL)
+
+LDL Cholesterol:                          119         115         120         
+(Reference Range: < 130 mg/dL)
+
+Cholesterol / HDL Cholesterol Ratio:      3           3           3           
+(Reference Range: < or = 5.0)
+
+Glucose:                                  89          84          88          
+(Reference Range: 65-99 mg/dL)
+
+Blood Pressure:                           99/53       99/50       99/56       
+(Reference Range: < 120/80 mmHg)
+
+Body Mass Index:                          28.1542     29.4681     31.5327     
+(Reference Range: 18.5-24.9)
+
+------------------------------------------------------------------------------------------------
+===============================================================================================
+PrintPatientHistory 5006
+
+Tim Ducrest
+Born on 01/12/2000
+                                        02/04/2017  
+------------------------------------------------------------------------------------------------
+Total Cholesterol:                        238         
+(Reference Range: 125-199mg/dL)
+
+HDL Cholesterol:                          36          
+(Reference Range: > or = 40 mg/dL)
+
+Triglycerides:                            301         
+(Reference Range: < 150 mg/dL)
+
+LDL Cholesterol:                          106         
+(Reference Range: < 130 mg/dL)
+
+Cholesterol / HDL Cholesterol Ratio:      5           
+(Reference Range: < or = 5.0)
+
+Glucose:                                  90          
+(Reference Range: 65-99 mg/dL)
+
+Blood Pressure:                           126/87      
+(Reference Range: < 120/80 mmHg)
+
+Body Mass Index:                          23.8417     
+(Reference Range: 18.5-24.9)
+
+------------------------------------------------------------------------------------------------
+===============================================================================================
+PrintPatientHistory 5008
+
+Suzy Walter
+Born on 09/20/1965
+                                        08/18/2017  
+------------------------------------------------------------------------------------------------
+Total Cholesterol:                        207         
+(Reference Range: 125-199mg/dL)
+
+HDL Cholesterol:                          42          
+(Reference Range: > or = 40 mg/dL)
+
+Triglycerides:                            200         
+(Reference Range: < 150 mg/dL)
+
+LDL Cholesterol:                          83          
+(Reference Range: < 130 mg/dL)
+
+Cholesterol / HDL Cholesterol Ratio:      3           
+(Reference Range: < or = 5.0)
+
+Glucose:                                  105         
+(Reference Range: 65-99 mg/dL)
+
+Blood Pressure:                           105/76      
+(Reference Range: < 120/80 mmHg)
+
+Body Mass Index:                          30.1355     
+(Reference Range: 18.5-24.9)
+
+------------------------------------------------------------------------------------------------
+===============================================================================================
+PrintPatientHistory 5010
+
+No Patient with Account Number 5010
+===============================================================================================
+PrintPatientCheckupSummary 5000 09/29/2016
+
+Name: Joe Garcia
+Born on: 11/10/1979, Male
+39 years old, 5'8", 215 pounds
+                                     09/29/2016
+--------------------------------------------
+Total Cholesterol:                     165
+(Reference Range: 125-199mg/dL)
+
+HDL Cholesterol:                       29
+(Reference Range: > or = 40 mg/dL)
+
+Triglycerides:                         312
+(Reference Range: < 150 mg/dL)
+
+LDL Cholesterol:                       74
+(Reference Range: < 130 mg/dL)
+
+Cholesterol/HDL Ratio:                 5
+(Reference Range: < or = 5.0)
+
+Glucose:                               91
+(Reference Range: 65-99 mg/dL)
+
+Blood Pressure:                        129/86
+(Reference Range: < 120/80 mmHg)
+
+Body Mass Index:                       31.20
+(Reference Range: 18.5-24.9)
+--------------------------------------------
+Notes to patient:
+ - Has a high risk of cornonary heart disease.
+ - May have "hypertension" due to blood pressure.
+ - Is Overweight with increased risk for health conditions such as heart disease, stroke.
+--------------------------------------------
+===============================================================================================
+PrintPatientCheckupSummary 5002 11/06/2016
+
+Name: Suzy Walter
+Born on: 01/01/2010, Female
+8 years old, 4'1", 70.00 pounds
+                                     11/06/2016
+--------------------------------------------
+Total Cholesterol:                     180
+(Reference Range: 125-199mg/dL)
+
+HDL Cholesterol:                       69
+(Reference Range: > or = 40 mg/dL)
+
+Triglycerides:                         120
+(Reference Range: < 150 mg/dL)
+
+LDL Cholesterol:                       87.00
+(Reference Range: < 130 mg/dL)
+
+Cholesterol/HDL Ratio:                 2.00
+(Reference Range: < or = 5.0)
+
+Glucose:                               80
+(Reference Range: 65-99 mg/dL)
+
+Blood Pressure:                        101/78
+(Reference Range: < 120/80 mmHg)
+
+Body Mass Index:                       20.33
+(Reference Range: 18.5-24.9)
+--------------------------------------------
+Notes to patient:
+Nothing...
+--------------------------------------------
+===============================================================================================
+PrintPatientCheckupSummary 5002 09/29/2017
+
+Patient does not have Checkups with this date.
+===============================================================================================
+PrintPatientCheckupSummary 5004 10/22/2016
+
+Name: Amelia Perez
+Born on: 12/05/1983, Female
+35 years old, 5'1", 157.00 pounds
+                                     10/22/2016
+--------------------------------------------
+Total Cholesterol:                     210
+(Reference Range: 125-199mg/dL)
+
+HDL Cholesterol:                       68
+(Reference Range: > or = 40 mg/dL)
+
+Triglycerides:                         135
+(Reference Range: < 150 mg/dL)
+
+LDL Cholesterol:                       115.00
+(Reference Range: < 130 mg/dL)
+
+Cholesterol/HDL Ratio:                 3.00
+(Reference Range: < or = 5.0)
+
+Glucose:                               84
+(Reference Range: 65-99 mg/dL)
+
+Blood Pressure:                        99/50
+(Reference Range: < 120/80 mmHg)
+
+Body Mass Index:                       29.47
+(Reference Range: 18.5-24.9)
+--------------------------------------------
+Notes to patient:
+ - Has a high risk of cornonary heart disease.
+ - Is Overweight with increased risk for health conditions such as heart disease, stroke.
+--------------------------------------------
+===============================================================================================
+PrintPatientCheckupSummary 5008 08/18/2017
+
+Name: Suzy Walter
+Born on: 09/20/1965, Female
+53 years old, 5'4", 180.00 pounds
+                                     08/18/2017
+--------------------------------------------
+Total Cholesterol:                     165
+(Reference Range: 125-199mg/dL)
+
+HDL Cholesterol:                       42
+(Reference Range: > or = 40 mg/dL)
+
+Triglycerides:                         200
+(Reference Range: < 150 mg/dL)
+
+LDL Cholesterol:                       83.00
+(Reference Range: < 130 mg/dL)
+
+Cholesterol/HDL Ratio:                 3.00
+(Reference Range: < or = 5.0)
+
+Glucose:                               105
+(Reference Range: 65-99 mg/dL)
+
+Blood Pressure:                        105/76
+(Reference Range: < 120/80 mmHg)
+
+Body Mass Index:                       30.14
+(Reference Range: 18.5-24.9)
+--------------------------------------------
+Notes to patient:
+ - Has a high risk of cornonary heart disease.
+ - Is Overweight with increased risk for health conditions such as heart disease, stroke.
+--------------------------------------------
+]0;higbe005@empress:~/CS211/hmwk2[higbe005@empress hmwk2]$ exit
+exit
+
+Script done on Mon 05 Mar 2018 08:43:46 PM PST

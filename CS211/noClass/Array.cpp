@@ -1,0 +1,94 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+void readArray(int[], int[], int[], int);
+void printArray(int[], int);
+void reverseArray(int[], int);
+int longestSequence(int[], int);
+
+int main()
+{
+  int arr0[10];
+  int arr1[10];
+  int arr2[10];
+
+  readArray(arr0, arr1, arr2, 10);
+  
+  reverseArray(arr0,10);  
+  
+  cout << "Longest Sequence of ";
+  printArray(arr0,10);
+  cout  << " is " << longestSequence(arr0, 10) << "." << endl;
+  
+  cout << "Longest Sequence of ";
+  printArray(arr1,10);
+  cout << " is " << longestSequence(arr1,10) << "." << endl;
+
+  cout << "Longest Sequence of ";
+  printArray(arr2,10);
+  cout << " is " << longestSequence(arr2,10) << "." << endl;
+  
+  return 0;
+}
+
+void readArray(int arr0[], int arr1[], int arr2[], int size)
+{
+  ifstream inFile;
+
+  inFile.open("arrays.txt");
+
+  for(int i = 0; i < size; i++)
+    inFile >> arr0[i];
+  for(int x = 0; x < size; x++)
+    inFile >> arr1[x];
+  for(int z = 0; z < size; z++)
+    inFile >> arr2[z];
+}
+
+void printArray(int arr[], int size)
+{
+  cout << "{";
+
+  for(int i = 0; i < size; i++)
+    {
+      cout << arr[i];
+      if(i != size - 1)
+	cout << ", ";
+    }
+
+  cout << "}";
+}
+
+void reverseArray(int arr[], int size)
+{
+  int tmp;
+  for(int i = 0; i < size/2; i++)
+    {
+      tmp = arr[i];
+      arr[i] = arr[size - 1 - i];
+      arr[size - 1 - i] = tmp;
+    }
+}
+
+int longestSequence(int arr[], int size)
+{
+  int count = 1, tmp = 1, i = 0;
+  
+  while(i < size)
+    {
+      if(arr[i] - arr[i + 1] == -1)
+	  count++;
+      else
+	if(arr[i] - arr[i+1] != 0)
+	  {
+	    if(tmp < count)
+	      tmp = count;
+	    count = 1;
+	  }
+      i++;
+    }
+  count = tmp;
+  return count;
+}

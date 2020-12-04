@@ -1,0 +1,15 @@
+Script started on Mon 09 Apr 2018 07:19:28 PM PDT
+]0;higbe005@empress:~/CS211/hmwk3[?1034h[higbe005@empress hmwk3]$ g++ matchIndex.cpp
+]0;higbe005@empress:~/CS211/hmwk3[higbe005@empress hmwk3]$ ./a.out
+Searching array 1 for '15'
+The index of the value is 17
+Searching array 2 for '99'
+The value does not exist
+Searching array 3 for '-5'
+The index of the value is 0
+Searching array 4 for '9'
+The index of the value is 9
+]0;higbe005@empress:~/CS211/hmwk3[higbe005@empress hmwk3]$ exit
+exit
+
+Script done on Mon 09 Apr 2018 07:19:48 PM PDT

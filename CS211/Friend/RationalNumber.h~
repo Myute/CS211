@@ -1,0 +1,17 @@
+#ifndef RATIONALNUMBER_H
+#define RATIONALNUMBER_H
+
+class RationalNumber
+{
+  friend printNum(const RationalNumber& r);
+ private:
+  int numerator;
+  int denominator;
+ public:
+  RationalNumber(int n, int d);
+  RationalNumber();
+  RationalNumber operator-(const RationalNumber& r1);
+
+};
+
+#endif

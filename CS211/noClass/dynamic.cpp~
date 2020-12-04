@@ -1,0 +1,30 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+  int size;
+  double avg = 0, sum = 0;
+  int *arrPtr = NULL;
+
+  cout << "Enter the number of monthly sales to be input: ";
+  cin >> size;
+
+  arrPtr = new int[size];
+  for(int i = 0; i < size; i++)
+    {
+      cout << "Enter the monthly sales for month " << i+1 << ": $ ";
+      cin >> arrPtr[i];
+    }
+  for(int i = 0; i < size; i++)
+    sum += arrPtr[i];
+  avg = sum / size;
+
+  cout << "The total sales for the year is: $ " << sum << endl
+       << "The average monthly sale is: $ " << avg << endl;
+  
+  delete [] arrPtr;
+
+  return 0;
+}

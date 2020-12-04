@@ -1,0 +1,39 @@
+#include "student.h"
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+//int student::totalNumofStudents = 0;
+//int student::nextStudentID = 0;
+Student student::~Student()
+{
+  totalNumofStudents--;
+}
+Student student::Student()
+{
+ 
+};
+Student student::Student(string theName, string theMajor, string theClassification, int theUnits)
+{
+  totalNumofStudents++;
+  name = theName;
+  major = theMajor;
+  classification = theClassification;
+  units = theUnits;
+};
+void student::print()
+{
+  
+}
+void student::getData()
+{
+  cout << "Enter the student's name: ";
+  cin >> name;
+  cout << "Enter the student's major: ";
+  cin >> major;
+  cout << "Enter the student's classification: ";
+  cin >> classification;
+  cout << "Enter the number of units the student is taking: ";
+  cin >> units;
+}
